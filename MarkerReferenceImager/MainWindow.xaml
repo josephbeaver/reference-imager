@@ -1,0 +1,25 @@
+﻿<Window x:Class="MarkerReferenceImager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarkerReferenceImager"
+        mc:Ignorable="d"
+        Title="Reference Images" Height="480" Width="520">
+    <StackPanel Background="SteelBlue">
+        <TextBlock Name="Instructions" Text="Drag a marker image to the space below" Foreground="White" Margin="10,5,10,0" FontSize="16" FontWeight="Bold"/>
+        <Border BorderBrush="White" Background="SteelBlue" BorderThickness="1,1,1,1" Margin="8" AllowDrop="True" Drop="MainImage_Drop">
+            <Image Width="500" Height="375" Name="MainImage" />
+        </Border>
+        <StackPanel Name="Control" Orientation="Horizontal" Visibility="Hidden">
+            <Border Background="SteelBlue" Name="InquiryBack" Margin="10,0">
+                <TextBlock Name="Inquiry" Foreground="White" FontWeight="Bold" Margin="5,0" Text="Use this as the reference image for CV0001?" VerticalAlignment="Center"/>
+            </Border>
+            <Button Name="Execute" Content="OK" Margin="10,0" Padding="5,0,5,1" Background="White" Foreground="SteelBlue" FontWeight="Bold" BorderThickness="0" Click="Execute_Click"/>
+            <Button Name="Cancel" Content="Cancel" Padding="5,0,5,1" Background="White" Foreground="SteelBlue" FontWeight="Bold" BorderThickness="0" Click="Cancel_Click"/>
+        </StackPanel>
+        <Border BorderBrush="White" Background="SteelBlue" BorderThickness="1,1,1,1" Margin="8" AllowDrop="False">
+            <Image Width="500" Height="375" Name="ExistingImage" />
+        </Border>
+    </StackPanel>
+</Window>
